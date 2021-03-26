@@ -7,10 +7,11 @@
 <title>Show Form</title>
 </head>
 <body>
-	<form action="processForm" method="GET">
+	<form action="processFormV2" method="GET">
 		<input type="text" name="studentName" placeholder="What is your name" />
+		<input type="email" name="email" placeholder="Enter email address" />
 		<button>Submit</button>
-
+		<!-- <button onClick="location.href='/capitalize'">Enter to capitalize your name</button> -->
 	</form>
 </body>
 </html>

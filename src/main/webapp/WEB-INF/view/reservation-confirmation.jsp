@@ -12,5 +12,7 @@
 	<br>
 	Last Name: ${reservationModel.lastName}
 	<br>
+	On Boarding Station: ${reservationModel.onBoard} Destination: ${reservationModel.destination } <br> 
+	Seating Position: ${reservationModel.seatPosition }
 </body>
 </html>
