@@ -6,7 +6,16 @@ public class Reservation {
 	protected String onBoard;
 	protected String destination;
 	protected String seatPosition;
+	protected String[] gender;
 	
+	public String[] getGender() {
+		return gender;
+	}
+
+	public void setGender(String[] gender) {
+		this.gender = gender;
+	}
+
 	public String getOnBoard() {
 		return onBoard;
 	}

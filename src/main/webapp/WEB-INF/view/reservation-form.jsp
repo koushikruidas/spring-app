@@ -38,7 +38,11 @@
 		Middle <form:radiobutton path="seatPosition" value="Middle"/>
 		Asile <form:radiobutton path="seatPosition" value="Asile"/>
 		<br><br>
-		<input type="submit" label="Submit" />
+		Gender: 
+		Male <form:checkbox path="gender" value="male" />
+		Female <form:checkbox path="gender" value="female" />
+		<br><br>
+		<input type="submit" value="Submit" />
 	</form:form>
 </body>
 </html>
