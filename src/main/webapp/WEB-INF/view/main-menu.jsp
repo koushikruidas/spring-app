@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Hello World!</h1>
+	<a href="showForm">Link to the Form</a><br><br>
+	<a href="reservationForm">Reserve Ticket?</a>
 </body>
 </html>
