@@ -25,6 +25,9 @@
 			<li>${temp}</li>
 		</c:forEach>
 	</ul>
+	
+	<br><br>
+	Total number of selected seats: ${reservationModel.numberOfSeat }
 
 </body>
 </html>
