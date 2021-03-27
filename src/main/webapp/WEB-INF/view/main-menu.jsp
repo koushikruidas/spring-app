@@ -10,5 +10,7 @@
 	<h1>Hello World!</h1>
 	<a href="showForm">Link to the Form</a><br><br>
 	<a href="reservationForm">Reserve Ticket?</a>
+	<br><br>
+	<a href="customerRegistration">New Customer? Register</a>
 </body>
 </html>
