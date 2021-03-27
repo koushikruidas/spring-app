@@ -7,6 +7,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Reservation Page</title>
+<style type="text/css">
+	.error {
+		color:red;
+	}
+</style>
 </head>
 <body>
 	<form:form action="reservationConfirmation" modelAttribute="reservationModel">
@@ -31,6 +36,10 @@
 			<form:option label="KAL" value="Kalani" />
 			<form:option label="BAN" value="Bankura" />
 		</form:select>
+		<br><br>
+		Number of Passengers:
+		<form:input path="numberOfSeat" placeholder="Enter number of passenger"/>
+		<form:errors path="numberOfSeat" cssClass="error"></form:errors>
 		<br><br>
 		Seating Arrangement:
 		

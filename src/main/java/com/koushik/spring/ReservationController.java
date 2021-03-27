@@ -1,7 +1,10 @@
 package com.koushik.spring;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,9 +16,14 @@ public class ReservationController {
 		model.addAttribute("reservationModel", res);
 		return "reservation-form";
 	}
-	
+
 	@RequestMapping("/reservationConfirmation")
-	public String confirmationPage(@ModelAttribute("reservationModel") Reservation res) {
-		return "reservation-confirmation";
+	public String confirmationPage(@Valid @ModelAttribute("reservationModel") Reservation res,
+			BindingResult theBindingResult) {
+		if (theBindingResult.hasErrors()) {
+			return "reservation-form";
+		} else {
+			return "reservation-confirmation";
+		}
 	}
 }

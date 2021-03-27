@@ -1,5 +1,8 @@
 package com.koushik.spring;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 public class Reservation {
 	protected String firstName;
 	protected String lastName;
@@ -8,6 +11,19 @@ public class Reservation {
 	protected String seatPosition;
 	protected String[] gender;
 	
+	// We do not want to a single user select more then 10 seats
+	@Min(value=1, message="Please select at least 1 seat")
+	@Max(value=10, message="Not more than 10 seats are allowed")
+	protected int numberOfSeat;
+	
+	public int getNumberOfSeat() {
+		return numberOfSeat;
+	}
+
+	public void setNumberOfSeat(int numberOfSeat) {
+		this.numberOfSeat = numberOfSeat;
+	}
+
 	public String[] getGender() {
 		return gender;
 	}
