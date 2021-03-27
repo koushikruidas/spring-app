@@ -2,6 +2,7 @@ package com.koushik.spring;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 public class Reservation {
 	protected String firstName;
@@ -12,15 +13,20 @@ public class Reservation {
 	protected String[] gender;
 	
 	// We do not want to a single user select more then 10 seats
+	@NotNull(message="is required")
 	@Min(value=1, message="Please select at least 1 seat")
 	@Max(value=10, message="Not more than 10 seats are allowed")
-	protected int numberOfSeat;
+	protected Integer numberOfSeat; // changing from primitive data type to non-primitive (int -> Integer) 
+									// we able to enforce NotNull validation 
+	// if we add blank spaces then we will receive error called TypeMisMatch
+	// but if we add initBinder method to the Reservation controller class then initBinder will 
+	// trim the blank spaces to null and on that case we will not face the type mismatch error
 	
-	public int getNumberOfSeat() {
+	public Integer getNumberOfSeat() {
 		return numberOfSeat;
 	}
 
-	public void setNumberOfSeat(int numberOfSeat) {
+	public void setNumberOfSeat(Integer numberOfSeat) {
 		this.numberOfSeat = numberOfSeat;
 	}
 
