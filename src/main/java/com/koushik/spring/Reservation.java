@@ -4,6 +4,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.koushik.mvc.annotations.PanCode;
+
 public class Reservation {
 	protected String firstName;
 	protected String lastName;
@@ -12,16 +14,31 @@ public class Reservation {
 	protected String seatPosition;
 	protected String[] gender;
 	
+	@NotNull(message="is required")
+	@PanCode(value="KOU05", message="pan code must start with 'KOU05'")
+	private String panNumber;
+	
 	// We do not want to a single user select more then 10 seats
+	
 	@NotNull(message="is required")
 	@Min(value=1, message="Please select at least 1 seat")
 	@Max(value=10, message="Not more than 10 seats are allowed")
-	protected Integer numberOfSeat; // changing from primitive data type to non-primitive (int -> Integer) 
-									// we able to enforce NotNull validation 
+	protected Integer numberOfSeat; 
+	
+	// changing from primitive data type to non-primitive (int -> Integer) 
+	// we able to enforce NotNull validation 
 	// if we add blank spaces then we will receive error called TypeMisMatch
 	// but if we add initBinder method to the Reservation controller class then initBinder will 
 	// trim the blank spaces to null and on that case we will not face the type mismatch error
 	
+	public String getPanNumber() {
+		return panNumber;
+	}
+
+	public void setPanNumber(String panCode) {
+		this.panNumber = panCode;
+	}
+
 	public Integer getNumberOfSeat() {
 		return numberOfSeat;
 	}

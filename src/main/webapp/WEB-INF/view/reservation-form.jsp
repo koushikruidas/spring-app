@@ -51,6 +51,10 @@
 		Male <form:checkbox path="gender" value="male" />
 		Female <form:checkbox path="gender" value="female" />
 		<br><br>
+		Pan Card Number:
+		<form:input path="panNumber"/>
+		<form:errors path="panNumber" cssClass="error"/>
+		<br><br>
 		<input type="submit" value="Submit" />
 	</form:form>
 </body>

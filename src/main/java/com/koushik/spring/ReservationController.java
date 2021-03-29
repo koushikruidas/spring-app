@@ -30,6 +30,8 @@ public class ReservationController {
 	@RequestMapping("/reservationConfirmation")
 	public String confirmationPage(@Valid @ModelAttribute("reservationModel") Reservation res,
 			BindingResult theBindingResult) {
+		System.out.println("Binding Result: "+theBindingResult);
+		
 		if (theBindingResult.hasErrors()) {
 			return "reservation-form";
 		} else {
